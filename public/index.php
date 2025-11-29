@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 
 // Define base path
 define('BASE_PATH', dirname(__DIR__));
-define('BASE_URL', 'http://localhost/POS/public');
+define('BASE_URL', 'http://localhost/POS-Final/public');
 
 // Autoload core files
 require_once BASE_PATH . '/core/Controller.php';

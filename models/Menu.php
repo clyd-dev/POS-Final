@@ -63,6 +63,7 @@ class Menu extends Model {
         $price = (float)$data['price'];
         $stock = (int)$data['stock'];
         $status = $this->escape($data['status']);
+        $image = isset($data['image']) ? $this->escape($data['image']) : '';
         
         $sql = "UPDATE menu_items SET 
                 name = '$name',
@@ -70,7 +71,8 @@ class Menu extends Model {
                 description = '$description',
                 price = $price,
                 stock = $stock,
-                status = '$status'
+                status = '$status',
+                image = '$image'
                 WHERE menu_id = $id";
         
         return $this->query($sql);

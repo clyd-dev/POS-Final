@@ -36,6 +36,7 @@ class OrderController extends Controller {
                 'total_amount' => (float)$_POST['total_amount'],
                 'payment_method' => $this->sanitize($_POST['payment_method']),
                 'payment_status' => 'Paid'
+
             ];
             
             $items = [];
@@ -79,10 +80,11 @@ class OrderController extends Controller {
         $orderModel = $this->model('Order');
         $order = $orderModel->getById($id);
         
-        if (!$order) {
-            $_SESSION['error'] = 'Order not found';
-            $this->redirect('/order');
-        }
+    // In receipt() method
+if (!$order) {
+    $_SESSION['error'] = 'Order not found';  // Fixed typo
+    $this->redirect('/order');
+}
         
         $data = [
             'page_title' => 'Order Receipt',
