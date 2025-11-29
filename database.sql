@@ -85,9 +85,6 @@ CREATE TABLE sales_summary (
     CHECK (total_revenue >= 0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insert default admin user (password: admin123)
-INSERT INTO users (username, password, full_name, email, role) VALUES
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'System Administrator', 'admin@pos.com', 'Admin');
 
 -- Sample menu items
 INSERT INTO menu_items (name, category, description, price, stock, image) VALUES

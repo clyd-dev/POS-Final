@@ -14,7 +14,7 @@
     <div class="content">
         <div class="container-fluid">
             <div class="card">
-                <form action="<?php echo BASE_URL; ?>/menu/create" method="POST">
+                <form action="<?php echo BASE_URL; ?>/menu/create" method="POST" enctype="multipart/form-data">
                     <div class="card-body">
                         <div class="form-group">
                             <label>Item Name *</label>
@@ -54,6 +54,13 @@
                             <label>Description</label>
                             <textarea name="description" class="form-control" rows="3"></textarea>
                         </div>
+                        
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" name="image" class="form-control" accept="image/*" onchange="previewImage(event)">
+                            <small class="form-text text-muted">Allowed formats: JPG, PNG, JPEG, GIF. Max size: 5MB.</small>
+                            <div id="image-preview" style="margin-top: 10px;"></div>
+                        </div>
                     </div>
                     
                     <div class="card-footer">
@@ -65,5 +72,21 @@
         </div>
     </div>
 </div>
+
+<script>
+function previewImage(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById('image-preview');
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.innerHTML = '<img src="' + e.target.result + '" width="100" height="100" style="border: 1px solid #ccc;">';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        preview.innerHTML = '';
+    }
+}
+</script>
 
 <?php include '../views/layouts/footer.php'; ?>
