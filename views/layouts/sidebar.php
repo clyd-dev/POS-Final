@@ -1,8 +1,10 @@
 <!-- Main Sidebar -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="<?php echo BASE_URL; ?>/dashboard" class="brand-link">
-            <i class="fas fa-utensils brand-image"></i>
-            <span class="brand-text font-weight-light">Restaurant POS</span>
+        <a href="<?php echo BASE_URL; ?>/dashboard" class="brand-link custom-brand">
+            <div class="brand-center">
+                <i class="fas fa-utensils brand-image"></i>
+                <strong><span class="brand-text font-weight-dark">POS</span></strong>
+            </div>
         </a>
         
         <div class="sidebar">

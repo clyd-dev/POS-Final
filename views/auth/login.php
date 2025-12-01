@@ -9,29 +9,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     
-    <style>
-        .login-page {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .login-box {
-            width: 400px;
-        }
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        .login-logo a {
-            color: #fff;
-            font-weight: bold;
-            font-size: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-    </style>
+<style>
+    /* CLEAN, MODERN GRADIENT BACKGROUND */
+    .login-page {
+        background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
+        background-size: 400% 400%;
+        animation: gradientMove 12s ease infinite;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* SUBTLE LIGHT GLOW SHAPES */
+    .login-page::before,
+    .login-page::after {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        filter: blur(140px);
+        opacity: 0.45;
+        z-index: 0;
+    }
+
+    /* PURPLE GLOW */
+    .login-page::before {
+        background: #9b59b6;
+        top: -200px;
+        left: -150px;
+    }
+
+    /* ORANGE GLOW */
+    .login-page::after {
+        background: #ff9800;
+        bottom: -200px;
+        right: -150px;
+    }
+
+    /* MOVE THE BACKGROUND SLOWLY */
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* CARD UI ENHANCEMENT (NO CODE CHANGES — JUST LOOK IMPROVED) */
+    .card {
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+    }
+
+    /* LOGIN BOX WIDTH */
+    .login-box {
+        width: 400px;
+        z-index: 2; /* ensure above glow */
+    }
+
+    /* LOGO REFINEMENT (but still uses your same HTML) */
+    .login-logo a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 2.2rem;
+        text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
+</style>
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Restaurant</b> POS</a>
+        <a href="#"><b><i class="fas fa-utensils brand-image"></i></b> POS</a>
     </div>
     
     <div class="card">
@@ -71,14 +120,7 @@
                     </div>
                 </div>
                 
-                <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">Remember Me</label>
-                        </div>
-                    </div>
-                    
+                <div class="row">    
                     <div class="col-4">
                         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                     </div>
@@ -86,8 +128,7 @@
             </form>
             
             <p class="mb-0 mt-3 text-center">
-                <small class="text-muted">Default: Juan / admin123</small><br>
-                <a href="<?php echo BASE_URL; ?>/auth/register"><small class="">Don't have an account? Register here.</small></a>
+                <small class="text-muted"><i class="fas fa-utensils brand-image"></i></small>
             </p>
         </div>
     </div>
