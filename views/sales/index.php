@@ -8,8 +8,9 @@
                     <h1 class="m-0">Sales Reports</h1>
                 </div>
                 <div class="col-sm-6">
-                    <a href="<?php echo BASE_URL; ?>/sales/export?start_date=<?php echo $start_date; ?>&end_date=<?php echo $end_date; ?>" class="btn btn-success float-right">
-                        <i class="fas fa-file-export"></i> Export to CSV
+                    <!-- <a href="<?php echo BASE_URL; ?>/sales/export?start_date=<?php echo $start_date; ?>&end_date=<?php echo $end_date; ?>" class="btn btn-success float-right"> -->
+                    <a href="#" class="btn btn-success float-right">
+                    <i class="fas fa-file-export"></i> Export
                     </a>
                 </div>
             </div>
@@ -73,21 +74,33 @@
             </div>
             
             <div class="row">
-                <!-- Sales Trend Chart -->
+                <!-- Daily Sales Table -->
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Sales Trend</h3>
-                            <div class="card-tools">
-                                <form class="form-inline" method="GET">
-                                    <input type="date" name="start_date" class="form-control form-control-sm mr-2" value="<?php echo $start_date; ?>" required>
-                                    <input type="date" name="end_date" class="form-control form-control-sm mr-2" value="<?php echo $end_date; ?>" required>
-                                    <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-search"></i></button>
-                                </form>
-                            </div>
+                            <h3 class="card-title">Daily Sales Summary</h3>
                         </div>
-                        <div class="card-body">
-                            <canvas id="salesTrendChart" height="80"></canvas>
+                        <div class="table-responsive card-body p-0">
+                            <table class="table table-striped datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Total Orders</th>
+                                        <th>Total Revenue</th>
+                                        <th>Average Order</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($daily_sales as $sale): ?>
+                                    <tr>
+                                        <td><?php echo date('F d, Y', strtotime($sale['sale_date'])); ?></td>
+                                        <td><?php echo $sale['total_orders']; ?></td>
+                                        <td>₱<?php echo number_format($sale['total_revenue'], 2); ?></td>
+                                        <td>₱<?php echo number_format($sale['total_orders'] > 0 ? $sale['total_revenue'] / $sale['total_orders'] : 0, 2); ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -125,33 +138,21 @@
             </div>
             
             <div class="row">
-                <!-- Daily Sales Table -->
+                <!-- Sales Trend Chart -->
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Daily Sales Summary</h3>
+                            <h3 class="card-title">Sales Trend</h3>
+                            <div class="card-tools">
+                                <form class="form-inline" method="GET">
+                                    <input type="date" name="start_date" class="form-control form-control-sm mr-2" value="<?php echo $start_date; ?>" required>
+                                    <input type="date" name="end_date" class="form-control form-control-sm mr-2" value="<?php echo $end_date; ?>" required>
+                                    <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-search"></i></button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="card-body p-0">
-                            <table class="table table-striped datatable">
-                                <thead>
-                                    <tr>
-                                        <th>Date</th>
-                                        <th>Total Orders</th>
-                                        <th>Total Revenue</th>
-                                        <th>Average Order</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($daily_sales as $sale): ?>
-                                    <tr>
-                                        <td><?php echo date('F d, Y', strtotime($sale['sale_date'])); ?></td>
-                                        <td><?php echo $sale['total_orders']; ?></td>
-                                        <td>₱<?php echo number_format($sale['total_revenue'], 2); ?></td>
-                                        <td>₱<?php echo number_format($sale['total_orders'] > 0 ? $sale['total_revenue'] / $sale['total_orders'] : 0, 2); ?></td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                        <div class="card-body">
+                            <canvas id="salesTrendChart" height="80"></canvas>
                         </div>
                     </div>
                 </div>

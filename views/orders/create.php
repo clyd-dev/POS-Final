@@ -19,7 +19,6 @@
 
             <form id="orderForm" action="<?php echo BASE_URL; ?>/order/create" method="POST">
                 <div class="row">
-
                     <!-- Menu Items -->
                     <div class="col-md-8">
                         <div class="card">
@@ -29,11 +28,11 @@
                                     <input type="text" id="searchMenu" class="form-control form-control-sm" placeholder="Search menu...">
                                 </div>
                             </div>
-                            <div class="card-body" style="max-height:520px; overflow-y:auto;">
+                            <div class="card-body" style="max-height:520px; overflow-y:auto; background-color: #f0f8ff;">
                                 <div class="row">
                                     <?php foreach ($menu_items as $item): ?>
                                     <div class="col-md-4 menu-item mb-3" data-name="<?php echo strtolower($item['name']); ?>">
-                                        <div class="card h-100 shadow-sm border-0">
+                                        <div class="card h-100 shadow-md border-0">
                                             <img src="<?php echo !empty($item['image']) ? $item['image'] : 'https://via.placeholder.com/150'; ?>" 
                                                  class="card-img-top" style="height:150px; object-fit:cover;" alt="">
                                             <div class="card-body text-center p-3">

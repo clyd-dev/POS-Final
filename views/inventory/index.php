@@ -42,7 +42,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="card-body p-0">
+                        <div class="table-responsive card-body p-0">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>

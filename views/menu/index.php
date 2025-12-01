@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="card-body p-0">
+                <div class="table-responsive card-body p-0">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -68,6 +68,7 @@
                                 <th>Category</th>
                                 <th>Price</th>
                                 <th>Stock</th>
+                                <th>Description</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -101,7 +102,7 @@
                                     <?php echo $item['stock']; ?>
                                 <?php endif; ?>
                             </td>
-
+                            <td><small><?php echo htmlspecialchars($item['description']); ?></small></td>
                             <td>
                                 <?php if ($item['status'] == 'Available'): ?>
                                     <span class="badge badge-success">Available</span>

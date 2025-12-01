@@ -85,41 +85,8 @@
             </div>
             
             <div class="row">
-                <!-- Sales Chart -->
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">7-Day Sales Trend</h3>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="salesChart" height="80"></canvas>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Best Sellers -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Top 5 Best Sellers</h3>
-                        </div>
-                        <div class="card-body p-0">
-                            <ul class="list-group list-group-flush">
-                                <?php foreach ($best_sellers as $item): ?>
-                                <li class="list-group-item">
-                                    <strong><?php echo htmlspecialchars($item['name']); ?></strong>
-                                    <span class="badge badge-primary float-right"><?php echo $item['total_sold']; ?> sold</span>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
                 <!-- Recent Orders -->
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Recent Orders</h3>
@@ -145,6 +112,39 @@
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Best Sellers -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Top 5 Best Sellers</h3>
+                        </div>
+                        <div class="card-body p-0">
+                            <ul class="list-group list-group-flush">
+                                <?php foreach ($best_sellers as $item): ?>
+                                <li class="list-group-item">
+                                    <strong><?php echo htmlspecialchars($item['name']); ?></strong>
+                                    <span class="badge badge-primary float-right"><?php echo $item['total_sold']; ?> sold</span>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Sales Chart -->
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">7-Day Sales Trend</h3>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="salesChart" height="80"></canvas>
                         </div>
                     </div>
                 </div>
