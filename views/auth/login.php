@@ -86,7 +86,8 @@
             </form>
             
             <p class="mb-0 mt-3 text-center">
-                <small class="text-muted">Default: Juan / admin123</small>
+                <small class="text-muted">Default: Juan / admin123</small><br>
+                <a href="<?php echo BASE_URL; ?>/auth/register"><small class="">Don't have an account? Register here.</small></a>
             </p>
         </div>
     </div>

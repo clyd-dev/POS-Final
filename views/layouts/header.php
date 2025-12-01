@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css">
-    
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/custom">
     <style>
         .brand-link { font-size: 1.25rem; font-weight: bold; }
         .low-stock { background-color: #fff3cd; }
@@ -29,8 +29,8 @@
         
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo BASE_URL; ?>/customer/menu" target="_blank">
-                    <i class="fas fa-store"></i> Customer Menu
+                <a class="nav-link" href="#" target="_blank">
+                    <i class="fas fa-store"></i>
                 </a>
             </li>
             <li class="nav-item dropdown">

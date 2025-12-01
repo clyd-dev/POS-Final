@@ -1,0 +1,138 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.brand-link {
+    font-weight: 700;
+    padding: 0.8rem 0.5rem;
+    transition: width 0.3s ease-in-out;
+}
+
+.brand-link .brand-text {
+    margin-left: 0.5rem;
+}
+
+/* Low stock styling */
+.low-stock {
+    background-color: #fff3cd !important;
+}
+
+.out-of-stock {
+    background-color: #f8d7da !important;
+}
+
+/* Order items styling */
+.order-item {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+/* Menu items grid */
+.menu-item .card {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.menu-item .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Receipt styling */
+#receiptContent {
+    padding: 30px;
+}
+
+/* Alert auto-dismiss */
+.alert {
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Sidebar menu active state */
+.nav-sidebar .nav-link.active {
+    background-color: #007bff !important;
+    color: white !important;
+}
+
+/* DataTables custom styling */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #007bff !important;
+    color: white !important;
+    border-color: #007bff !important;
+}
+
+/* Modal improvements */
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 1;
+}
+
+/* Button improvements */
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Card shadows */
+.card {
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+}
+
+/* Small box hover effect */
+.small-box {
+    transition: transform 0.2s;
+}
+
+.small-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Print styles */
+@media print {
+    .main-header,
+    .main-sidebar,
+    .content-header,
+    .card-footer,
+    .btn,
+    .no-print {
+        display: none !important;
+    }
+    
+    .content-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 10px;
+    }
+    
+    .small-box h3 {
+        font-size: 1.5rem;
+    }
+}

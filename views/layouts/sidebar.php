@@ -11,7 +11,7 @@
                     <i class="fas fa-user-circle fa-2x text-white"></i>
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?php echo $_SESSION['full_name']; ?></a>
+                    <a href="<?php echo BASE_URL; ?>/dashboard" class="d-block"><?php echo $_SESSION['full_name']; ?></a>
                     <small class="text-muted"><?php echo $_SESSION['role']; ?></small>
                 </div>
             </div>
